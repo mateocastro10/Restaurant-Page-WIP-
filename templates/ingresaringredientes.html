@@ -1,0 +1,23 @@
+{% extends "base_template.html" %}
+{% block title %}restaurante Sancho Panza{% endblock %}
+{% block content %}
+      <h1>Ingresar ingredientes</h1>
+      <hr/>
+      <form action = "{{ url_for('ingresaringredientes') }}" method = "post" class= "container">
+          <tbody>
+            {% for i in range(x) %}
+               <tr>
+                <label for = "nombrei{{i}}">Nombre del ingrediente</label><br>
+                <input type = "text" name = "nombrei{{i}}" placeholder = "nombrei" /><br>
+                <label for = "cantidadi{{i}}"> Cantidad del ingrediente</label><br>
+                <input type = "text" name = "cantidadi{{i}}" placeholder = "cantidad" /><br>
+                <label for = "unidad{{i}}"> Unidad de medida del ingrediente</label><br>
+                <input type = "text" name = "unidad{{i}}" placeholder = "unidad" /><br>
+            {% endfor %}
+                   <input name="x" type="hidden" value="{{x}}">
+                   <input name="recetaid" type="hidden" value="{{recetaid}}">
+                   <input type="submit" value="Ingresar ingrediente">
+               </tr>
+         </tbody>
+      </form>
+{% endblock %}

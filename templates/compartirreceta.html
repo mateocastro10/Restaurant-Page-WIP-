@@ -1,0 +1,20 @@
+{% extends "base_template.html" %}
+{% block title %}Restaurante Sancho Panza{% endblock %}
+{% block content %}
+<body>
+      <h1>Compartir receta</h1>
+      <hr/>
+      <form action = "{{ url_for('ingreso_receta') }}" method = "post" class = "container">
+          <label for = "nombre">Nombre de la receta</label><br>
+          <input type = "nombre" name = "nombre" /><br>
+          <label for = "tiempo">Tiempo estimado</label><br>
+          <input type = "text" name = "tiempo" placeholder = "tiempo" /><br>
+          <label for = "descripcion"> Descripcion</label><br>
+          <textarea name = "descripcion" placeholder = "Descripcion" cols="60" rows="8"></textarea><br><br>
+          <label for = "cing"> Cantidad de ingredientes:</label><br>
+          <input type = "text" name = "cing" placeholder = "cantidad" /><br>
+          <input name="usuario_actual" type="hidden" value="{{usuario_actual}}">
+          <input type = "submit" value = "Ingresar ingredientes" />
+      </form>
+   </body>
+{% endblock %}

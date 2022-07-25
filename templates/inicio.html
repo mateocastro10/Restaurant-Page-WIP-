@@ -1,0 +1,16 @@
+{% extends "base_template.html" %}
+{% block title %}restaurante Sancho Panza{% endblock %}
+{% block content %}
+      <h1>Iniciar sesion</h1>
+      <hr/>
+      <form action = "{{ url_for('login') }}" method = "post" class= "container">
+         <label for = "email">Correo Electrónico</label><br>
+         <input type = "text" name = "email" placeholder = "email" /><br>
+         <label for = "password">Ingrese su contraseña</label><br>
+         <input type = "password" name = "password" placeholder = "password"/><br>
+
+		 <br>
+         <input type = "submit" value = "Buscar" />
+
+      </form>
+{% endblock %}

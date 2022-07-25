@@ -1,0 +1,12 @@
+{% extends "base_template.html" %}
+{% block title %}Restaurante Sancho Panza{% endblock %}
+{% block content %}
+<h1>Seleccione opcion</h1>
+<tbody>
+    <li> <a href = "{{ url_for('compartirreceta') }}"> Compartir receta </a></li><br>
+    <li> <a href = "{{ url_for('consultarranking') }}"> Consultar ranking </a></li><br>
+    <li> <a href = "{{ url_for('consultarreceta') }}"> Consultar receta por tiempo de elaboracion </a></li><br>
+    <li> <a href = "{{ url_for('recetaporingrediente') }}"> Consultar una receta por ingrediente </a></li><br>
+</tbody>
+{% endblock %}
+

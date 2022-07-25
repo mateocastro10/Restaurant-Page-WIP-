@@ -1,0 +1,14 @@
+{% extends "base_template.html" %}
+{% block title %}Restaurante Sancho Panza{% endblock %}
+{% block content %}
+      <h1>Ingresar dato</h1>
+      <hr/>
+      <form action = "{{ url_for('recetaporingredientedado') }}" method = "post" class= "container">
+          <tbody>
+            <tr>
+                <input type = "text" name = "pideing" placeholder = "Ingrediente" /><br>
+                <input type = "submit" value = "Ingresar" />
+            </tr>
+         </tbody>
+      </form>
+{% endblock %}

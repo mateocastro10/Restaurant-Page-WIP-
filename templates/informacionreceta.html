@@ -1,0 +1,48 @@
+{% extends "base_template.html" %}
+{% block title %}Restaurante Sancho Panza{% endblock %}
+{% block content %}
+<h1>Informacion de la receta </h1>
+<hr/>
+    <div class="container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Tiempo</th>
+                    <th>Descripcion</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <form action = "{{ url_for('megusta') }}" method = "post" class = "container">
+                    <tr>
+                        <td>{{ Receta.nombre }}</td>
+                        <td>{{ Receta.tiempo }}</td>
+                        <td>{{ Receta.elaboracion }}</td>
+                    </tr>
+
+                       <div>
+                           <tr>
+                                <th>Nombre                   </th>
+                                <th>Cantidad</th>
+                                <th>Unidad</th>
+                                </tr>
+                            {% for Ingrediente in lista %}
+                                <tr>
+                                    <td>{{Ingrediente.nombre}}</td>
+                                    <td>{{Ingrediente.cantidad}}</td>
+                                    <td>{{Ingrediente.unidad}}</td>
+                                </tr>
+                            {% endfor %}
+
+                           Autor de la Receta:
+                           {{ usuario.nombre }}
+                           {% if usuario.id != session.usuario %}
+                            <input type = "submit" name= "recetaid" id="recetaid" value = "{{ Receta.id }}" /><br>
+                           {%endif%}
+                       </div>
+                </form>
+            </tbody>
+        </table>
+    </div>
+{%endblock%}
